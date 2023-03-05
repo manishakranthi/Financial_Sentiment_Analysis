@@ -16,6 +16,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 loaded_model = pickle.load(open('filename', 'rb'))
+def load():
+	''' Load the calculated TFIDF weights'''
+
+	df = None
+	with open('tfidf.pickle', 'rb') as f:
+	    df = pickle.load(f)
+	return df 
+
 
 def text_cleaning(line_from_column):
     text = line_from_column.lower()
@@ -29,13 +37,6 @@ def text_cleaning(line_from_column):
     words = ' '.join(words)
     return text 
 
-def load():
-	''' Load the calculated TFIDF weights'''
-
-	df = None
-	with open('tfidf.pickle', 'rb') as f:
-	    df = pickle.load(f)
-	return df 
 
 if __name__ == '__main__':
     st.title('Financial Sentiment Analysis :bar_chart:')
