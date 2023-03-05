@@ -45,7 +45,7 @@ if __name__ == '__main__':
     predict_btt = st.button('predict')
     loaded_model = pickle.load(open('filename', 'rb')) 
     with open('tfidf.pickle', 'rb') as f:
-		df = pickle.load(f)
+	df = pickle.load(f)
 		
     if predict_btt:
         clean_text = []
