@@ -34,7 +34,7 @@ def load():
 
 	df = None
 	with open('tfidf.pickle', 'rb') as f:
-		df = pickle.load(f)
+	    df = pickle.load(f)
 	return df 
 
 if __name__ == '__main__':
@@ -44,6 +44,7 @@ if __name__ == '__main__':
     sentence = st.text_area('Enter your text here',height=200)
     predict_btt = st.button('predict')
     loaded_model = pickle.load(open('filename', 'rb')) 
+    df = pickle.load(f)
     if predict_btt:
         clean_text = []
         i = text_cleaning(sentence)
