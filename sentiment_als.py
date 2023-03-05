@@ -50,7 +50,7 @@ if __name__ == '__main__':
         clean_text = []
         i = text_cleaning(sentence)
         clean_text.append(i)
-        data = load_val(clean_text)
+        data = load_val.toarray(clean_text)
 
         # st.info(data)
         prediction = loaded_model.predict(data)
