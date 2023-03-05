@@ -16,14 +16,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 loaded_model = pickle.load(open('filename', 'rb'))
-def load_val():
-	''' Load the calculated TFIDF weights'''
 
-	df = None
-	with open('tfidf.pickle', 'rb') as f:
-	    df = pickle.load(f)
-	return df 
-
+with open('tfidf.pickle', 'rb') as f:
+	df = pickle.load(f)
 
 def text_cleaning(line_from_column):
     text = line_from_column.lower()
@@ -50,7 +45,7 @@ if __name__ == '__main__':
         clean_text = []
         i = text_cleaning(sentence)
         clean_text.append(i)
-        data = load_val.toarray(clean_text)
+        data = df(clean_text)
 
         # st.info(data)
         prediction = loaded_model.predict(data)
