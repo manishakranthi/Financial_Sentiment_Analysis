@@ -40,7 +40,7 @@ def load():
 if __name__ == '__main__':
     st.title('Financial Sentiment Analysis :bar_chart:')
     st.write('A simple sentiment analysis classification app')
-    st.subheader('Input the Statment below')
+    st.subheader('Input the Statement below')
     sentence = st.text_area('Enter your text here',height=200)
     predict_btt = st.button('predict')
     loaded_model = pickle.load(open('filename', 'rb')) 
@@ -48,7 +48,8 @@ if __name__ == '__main__':
         clean_text = []
         i = text_cleaning(sentence)
         clean_text.append(i)
-        data = df(clean_text)
+        vec = df(clean_text)
+	data = vec.toarray()
 
         # st.info(data)
         prediction = loaded_model.predict(data)
