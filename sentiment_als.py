@@ -44,15 +44,12 @@ if __name__ == '__main__':
     sentence = st.text_area('Enter your text here',height=200)
     predict_btt = st.button('predict')
     loaded_model = pickle.load(open('filename', 'rb')) 
-	
-    with open('tfidf.pickle', 'rb') as f:
-	df = pickle.load(f)
-		
+   
     if predict_btt:
         clean_text = []
         i = text_cleaning(sentence)
         clean_text.append(i)
-        data = df(clean_text)
+        data = df.fit_transform(clean_text)
 
         # st.info(data)
         prediction = loaded_model.predict(data)
