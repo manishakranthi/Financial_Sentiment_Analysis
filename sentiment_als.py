@@ -45,7 +45,7 @@ if __name__ == '__main__':
         clean_text = []
         i = text_cleaning(sentence)
         clean_text.append(i)
-        data = df([clean_text])
+        data = df.transform([clean_text])toarray
 	
         # st.info(data)
         prediction = loaded_model.predict(data)
