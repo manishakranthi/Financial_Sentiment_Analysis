@@ -46,6 +46,7 @@ if __name__ == '__main__':
     loaded_model = pickle.load(open('filename', 'rb')) 
     with open('tfidf.pickle', 'rb') as f:
 		df = pickle.load(f)
+		
     if predict_btt:
         clean_text = []
         i = text_cleaning(sentence)
