@@ -48,7 +48,7 @@ if __name__ == '__main__':
         clean_text = []
         i = text_cleaning(sentence)
         clean_text.append(i)
-        data = load(clean_text)
+        data = df(clean_text)
 
         # st.info(data)
         prediction = loaded_model.predict(data)
