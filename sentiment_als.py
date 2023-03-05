@@ -44,6 +44,7 @@ if __name__ == '__main__':
     sentence = st.text_area('Enter your text here',height=200)
     predict_btt = st.button('predict')
     loaded_model = pickle.load(open('filename', 'rb')) 
+	
     with open('tfidf.pickle', 'rb') as f:
 	df = pickle.load(f)
 		
