@@ -1,3 +1,6 @@
 pandas
-sklearn
-streamlit 
+numpy
+scikit-learn
+streamlit
+textblob
+nltk
