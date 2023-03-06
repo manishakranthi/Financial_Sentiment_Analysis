@@ -46,12 +46,10 @@ if __name__ == '__main__':
         clean_text = []
         i = text_cleaning(sentence)
         clean_text.append(i)
-        tokens = word_tokenize(clean_text)
-        data = df.fit_transform([tokens])
-        vec = data.toarray() 
-	
+        data = df.fit_transform([clean_text])
+				
         # st.info(vec)
-        prediction = loaded_model.predict(vec)
+        prediction = loaded_model.predict(data)
 
         prediction_prob_negative = prediction[0][-1]
         prediction_prob_neutral = prediction[0][0]
