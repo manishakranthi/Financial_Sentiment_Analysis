@@ -12,12 +12,13 @@ import string
 from textblob import Word
 from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 loaded_model = pickle.load(open('filename', 'rb'))
 
-with open('tfidf.pickle', 'rb') as f:
+with open('tfidf.pkl', 'rb') as f:
 	df = pickle.load(f)
 
 def text_cleaning(line_from_column):
@@ -45,7 +46,8 @@ if __name__ == '__main__':
         clean_text = []
         i = text_cleaning(sentence)
         clean_text.append(i)
-        data = df([clean_text])
+	tokens = word_tokenize(clean_text)
+        data = df.fit_transform([tokens])
 	
         # st.info(data)
         prediction = loaded_model.predict(data)
