@@ -48,7 +48,7 @@ if __name__ == '__main__':
         clean_text.append(i)
         tokens = word_tokenize(clean_text)
         data = df.fit_transform([tokens])
-	vec = data.toarray() 
+        vec = data.toarray() 
 	
         # st.info(vec)
         prediction = loaded_model.predict(vec)
