@@ -56,8 +56,7 @@ if __name__ == '__main__':
         prediction_prob_positive= prediction[0][1]
 
         prediction_class = prediction(axis=-1)[0]
-        print(prediction)
-        st.header('Prediction using SVC model')
+        print(prediction
         if prediction_class == -1:
           st.warning('Sentence has negative sentiment')
         if prediction_class == 0:
